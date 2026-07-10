@@ -1,0 +1,39 @@
+name: Portfolio Contract
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  domain-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out portfolio and projects
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          submodules: recursive
+      - name: Set up Python
+        uses: actions/setup-python@e7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Run all domain contracts
+        run: make test
+      - name: Publish verification summary
+        if: always()
+        run: |
+          {
+            echo "### Portfolio contract"
+            echo ""
+            echo "- Seven independent project repositories"
+            echo "- Forty-six deterministic domain tests"
+            echo "- No paid or hosted service required"
+          } >> "$GITHUB_STEP_SUMMARY"

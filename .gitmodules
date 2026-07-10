@@ -1,0 +1,21 @@
+[submodule "01-lakehouse-data-platform"]
+	path = 01-lakehouse-data-platform
+	url = https://github.com/kevinmeix1/lakehouse-data-platform.git
+[submodule "02-feature-store-inference"]
+	path = 02-feature-store-inference
+	url = https://github.com/kevinmeix1/feature-store-inference.git
+[submodule "03-mlops-lifecycle-platform"]
+	path = 03-mlops-lifecycle-platform
+	url = https://github.com/kevinmeix1/mlops-lifecycle-platform.git
+[submodule "04-data-observability-lineage"]
+	path = 04-data-observability-lineage
+	url = https://github.com/kevinmeix1/data-observability-lineage.git
+[submodule "05-rag-evaluation-pipeline"]
+	path = 05-rag-evaluation-pipeline
+	url = https://github.com/kevinmeix1/rag-evaluation-pipeline.git
+[submodule "06-streaming-fraud-anomaly"]
+	path = 06-streaming-fraud-anomaly
+	url = https://github.com/kevinmeix1/streaming-fraud-anomaly.git
+[submodule "07-elt-connector-framework"]
+	path = 07-elt-connector-framework
+	url = https://github.com/kevinmeix1/elt-connector-framework.git

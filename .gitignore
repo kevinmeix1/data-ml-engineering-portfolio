@@ -1,0 +1,22 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.local/
+data/raw/
+data/processed/
+warehouse/
+reports/
+registry/
+online_store/
+*.db
+*.sqlite
+*.duckdb
+*.parquet
+.env
+
+# Local scaffolding history is not part of the public portfolio index.
+/tools/
