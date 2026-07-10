@@ -14,7 +14,7 @@ the demo or labelled as a migration path.
 Audited locally on 10 July 2026:
 
 - all seven documented workflows complete successfully
-- 46 domain tests pass across the portfolio
+- 48 domain tests pass across the portfolio
 - every project has a reproducible local workflow and dashboard artifact
 - every project has a Compose topology, but several external services are not
   yet used by the core workflow

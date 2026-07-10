@@ -2,7 +2,7 @@
 
 ## Executive Assessment
 
-The portfolio contains real, reviewable engineering logic. All 46 domain tests
+The portfolio contains real, reviewable engineering logic. All 48 domain tests
 pass, and each local workflow generates the documented artifacts. The strongest
 tests cover meaningful properties: point-in-time correctness, offline/online
 parity, idempotent ingestion, failed promotion gates, duplicate incidents, late
@@ -20,7 +20,7 @@ candidates; none has yet cleared the full portfolio standard.
 
 This review used the repositories as they exist, not their project briefs.
 
-- Ran all 46 tests through the portfolio test runner.
+- Ran all 48 tests through the portfolio test runner.
 - Ran every documented local workflow from a clean `.local` directory.
 - Inspected each README, Makefile, Compose file, Dockerfile, CI workflow, source
   layout, test suite, and screenshot.
@@ -34,8 +34,8 @@ Audit date: 10 July 2026.
 
 | Project | Local Workflow | Tests | Public CI | Integrated Runtime | Mentor Verdict |
 | --- | --- | ---: | --- | --- | --- |
-| Lakehouse | Pass | 5 | No | App runs locally; MinIO, Redpanda, Postgres, dbt, and Airflow are not the core executed path | Best Data Engineering candidate; harden next |
-| Feature Store | Pass | 6 | No | Core uses SQLite/JSON; FastAPI exists, but the container command runs a finite demo | Strong correctness tests; demo and serving path block flagship status |
+| Lakehouse | Pass | 6 | No | App runs locally; MinIO, Redpanda, Postgres, dbt, and Airflow are not the core executed path | Best Data Engineering candidate; harden next |
+| Feature Store | Pass | 7 | No | Core uses SQLite/JSON; FastAPI exists, but the container command runs a finite demo | Strong correctness tests; demo and serving path block flagship status |
 | MLOps Lifecycle | Pass | 7 | Yes | File-backed tracking/registry; `serve` is a scoring smoke, not a long-running API | Useful governance module; merge into ML platform story |
 | Observability | Pass with intentional incidents | 6 | No | SQLite/JSON metadata; Marquez/Postgres are reference services | Good reliability logic; integrate with Lakehouse |
 | RAG Evaluation | Pass | 8 | No | Long-running local HTTP API; Qdrant/pgvector are not exercised | Best AI candidate; evaluation set is far too small |

@@ -7,7 +7,7 @@ weight, and do not present local benchmark numbers as production results.
 
 - Built and tested seven local-first data and ML engineering projects covering
   analytical pipelines, temporal features, model governance, data reliability,
-  RAG evaluation, event-time processing, and incremental ELT; implemented 46
+  RAG evaluation, event-time processing, and incremental ELT; implemented 48
   deterministic domain tests and documented production boundaries.
 
 Use this only when a broad portfolio summary is useful. A role-specific CV is

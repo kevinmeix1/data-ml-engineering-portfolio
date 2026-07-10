@@ -37,7 +37,7 @@ tables, with quality, backfill, lineage, and run metadata.
 row-count and revenue reconciliation then prove that the model graph did not
 silently lose or duplicate facts.
 
-**Evidence:** five tests cover the happy path, source idempotency, dead-letter
+**Evidence:** six tests cover the happy path, source idempotency, dead-letter
 handling, schema evolution, and multi-partition backfill. `make demo` builds 11
 models and a serving SQLite database.
 
@@ -63,7 +63,7 @@ rollback.
 time. The point-in-time test injects future data and proves the join excludes it;
 the parity test compares offline and materialized online values.
 
-**Evidence:** six tests cover temporal correctness, parity, streaming
+**Evidence:** seven tests cover temporal correctness, parity, streaming
 idempotency, late events, prediction logging, and registry rollback.
 
 **Tradeoff:** the default store is SQLite/JSON with optional Redis access. The

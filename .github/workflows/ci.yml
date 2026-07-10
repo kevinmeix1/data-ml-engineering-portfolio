@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run all domain contracts
-        run: make test
+        run: PYTHONWARNINGS=error::ResourceWarning make test
       - name: Publish verification summary
         if: always()
         run: |
@@ -34,6 +34,6 @@ jobs:
             echo "### Portfolio contract"
             echo ""
             echo "- Seven independent project repositories"
-            echo "- Forty-six deterministic domain tests"
+            echo "- Forty-eight deterministic domain tests"
             echo "- No paid or hosted service required"
           } >> "$GITHUB_STEP_SUMMARY"
