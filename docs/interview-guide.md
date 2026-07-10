@@ -28,6 +28,14 @@ traffic, real sensitive data, security review, load, cost pressure, or on-call
 conditions. I can explain exactly which components are real, which are
 simulated, and what I would harden first.
 
+### When asked how AI was used
+
+I used AI to accelerate scaffolding and iteration, then treated its output like
+an untrusted first draft. I ran the workflows, read the core paths, added or
+verified property-focused tests, removed unsupported claims, and documented the
+remaining boundaries. I only present projects whose design and failure behavior
+I can explain and change myself.
+
 ## 1. Lakehouse Data Platform
 
 **Scope:** local event ingestion through raw, bronze, silver, gold, and serving

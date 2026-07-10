@@ -42,6 +42,27 @@ Audit date: 10 July 2026.
 | Streaming Fraud | Pass | 7 | No | JSONL topic simulator; no Kafka/Flink runtime | Good streaming semantics lab; not yet a real-time platform |
 | ELT Connector | Pass | 7 | No | Fake API and local files/SQLite; MinIO/Postgres are reference services | Clean supporting framework; connect it to Lakehouse |
 
+## Shared Contract Compliance
+
+The shared engineering standard is a target. It is not yet the portfolio's
+implemented baseline.
+
+| Evidence | Current Coverage | Assessment |
+| --- | ---: | --- |
+| Domain test command | 7/7 | `make test` is available everywhere; 48 tests pass through the index |
+| One-command local demo | 5/7 | MLOps and RAG use documented multi-command workflows rather than `make demo` |
+| Real lint command | 0/7 | The only `lint` target runs `py_compile`, which is a compile check |
+| Real type check | 0/7 | No repository currently runs mypy, Pyright, or an equivalent checker |
+| Exact dependency lock | 0/7 | Broad lower bounds make installs drift over time |
+| Explicit public license | 0/7 | Reuse terms are currently undefined |
+| Standard `compose.yaml` name | 0/7 | Every child still uses `docker-compose.yml` |
+| Child-repository CI | 1/7 | MLOps has CI; the index separately runs all seven domain suites |
+| Service-backed Compose smoke | 0/7 | Compose topologies exist, but no child proves a domain transaction against them in CI |
+
+This is the first cross-portfolio milestone. Adding another subsystem before
+closing these basic gaps would make the portfolio broader without making it
+more credible.
+
 ## Material Findings
 
 ### 1. Compose overstates integration
@@ -67,8 +88,9 @@ checking. Use a real linter and type checker or call the step a compile check.
 ### 3. Flagship demo evidence is too easy
 
 - Feature Store marks 259 of 300 simulated stream records late, reports stale
-  features, and promotes a synthetic model with 0.50 accuracy and 0.125
-  precision. Those outputs weaken rather than strengthen the story.
+  features for part of the online snapshot, and promotes a synthetic model with
+  0.50 accuracy and 0.125 precision. Those outputs weaken rather than
+  strengthen the story.
 - RAG evaluates three tiny documents with three questions. Perfect recall and
   MRR are fixture checks, not meaningful retrieval-quality evidence.
 - MLOps drift compares a batch distribution with one online prediction. The
@@ -95,6 +117,20 @@ Several `pyproject.toml` files list Airflow, MLflow, Feast, Evidently, Ragas,
 Qdrant, and other heavy integrations while the fast path uses the standard
 library. This is acceptable only when extras are separated and the README says
 which dependency set each command exercises.
+
+### 6. AI assistance raises the ownership bar
+
+AI assistance does not make a portfolio project invalid, but seven generated
+platforms with similar structure invite a reviewer to test whether the author
+understands the code. Do not feature a repository until you can trace its core
+state transitions, diagnose one failed test, change one contract safely, and
+explain why the design rejected at least one alternative.
+
+If asked, describe AI use plainly: it accelerated scaffolding and iteration;
+you verified the behavior, corrected the claims, and own the final engineering
+decisions. Commit history, focused pull requests, failure reproductions, and
+specific tradeoff notes are stronger ownership evidence than more generated
+surface area.
 
 ## Overlap And Ownership
 

@@ -3,6 +3,12 @@
 This is the minimum public quality bar for every project. It favors truthful,
 repeatable evidence over a large architecture diagram.
 
+It is deliberately a target standard. As audited on 10 July 2026, the current
+portfolio has `make test` in 7/7 repositories, `make demo` in 5/7, a real linter
+in 0/7, a real type checker in 0/7, child-repository CI in 1/7, and a verified
+service-backed Compose smoke path in 0/7. Compliance must be earned by an
+executable check, not inferred from a file or dependency name.
+
 ## 1. Three Execution Modes
 
 Every README must include an implementation matrix like this:
@@ -101,6 +107,28 @@ snake case. Keep the current names:
 | `rag-evaluation-pipeline` | `rag_pipeline` |
 | `streaming-fraud-anomaly` | `fraud_streaming` |
 | `elt-connector-framework` | `elt_framework` |
+
+The portfolio index uses numbered submodule paths for a stable review order;
+the independent GitHub repository names do not include those prefixes:
+
+```text
+data-ml-engineering-portfolio/
+  README.md
+  Makefile
+  scripts/
+  docs/
+  01-lakehouse-data-platform/
+  02-feature-store-inference/
+  03-mlops-lifecycle-platform/
+  04-data-observability-lineage/
+  05-rag-evaluation-pipeline/
+  06-streaming-fraud-anomaly/
+  07-elt-connector-framework/
+```
+
+The numbers are navigation order, not maturity scores. Capability consolidation
+should happen inside the strongest repositories; do not create new duplicate
+repositories merely to rename a project.
 
 ## 4. Docker And Compose
 
@@ -298,9 +326,10 @@ A project becomes flagship-ready only when:
 
 ## References
 
-- [Docker Compose service health and dependency conditions](https://docs.docker.com/reference/compose-file/services/)
+- [Docker Compose startup order and health conditions](https://docs.docker.com/compose/how-tos/startup-order/)
 - [Docker Compose profiles](https://docs.docker.com/compose/how-tos/profiles/)
 - [GitHub Actions secure use](https://docs.github.com/en/actions/reference/security/secure-use)
 - [GitHub Actions concurrency](https://docs.github.com/en/actions/concepts/workflows-and-actions/concurrency)
-- [Python reproducible environment specification](https://packaging.python.org/en/latest/specifications/section-reproducible-environments/)
+- [Python `pylock.toml` specification](https://packaging.python.org/en/latest/specifications/pylock-toml/)
 - [OpenTelemetry semantic conventions](https://opentelemetry.io/docs/concepts/semantic-conventions/)
+- [Prometheus client instrumentation guidance](https://prometheus.io/docs/instrumenting/writing_clientlibs/)

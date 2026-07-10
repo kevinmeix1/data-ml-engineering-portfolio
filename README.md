@@ -20,7 +20,10 @@ Audited locally on 10 July 2026:
 - every project has a reproducible local workflow and dashboard artifact
 - every project has a Compose topology, but several external services are not
   yet used by the core workflow
-- only the MLOps Lifecycle repository currently has public CI
+- five projects expose the target one-command `make demo`; MLOps Lifecycle and
+  RAG currently require their documented multi-command workflows
+- only the MLOps Lifecycle child repository currently has its own public CI;
+  the portfolio index runs all seven domain suites in one public workflow
 
 That last point matters. The projects are credible local demonstrations, but the
 portfolio is not yet ready to present all seven as equally mature systems.
@@ -47,7 +50,7 @@ specific hardening gate before it should be pinned as finished work.
 | Candidate | Best Evidence | Hardening Gate | Repository |
 | --- | --- | --- | --- |
 | Lakehouse Data Platform | Medallion and dimensional models, idempotent ingestion, reconciliation, backfills, lineage | Run one real service-backed path and add CI | [GitHub](https://github.com/kevinmeix1/lakehouse-data-platform) |
-| Feature Store and Inference | Point-in-time joins, offline/online parity, late-event and rollback tests | Fix demo freshness/event-time behavior and make the API container long-running | [GitHub](https://github.com/kevinmeix1/feature-store-inference) |
+| Feature Store and Inference | Point-in-time joins, offline/online parity, late-event and rollback tests | Fix demo event-time/freshness behavior, add a credible promotion gate, and make the API container long-running | [GitHub](https://github.com/kevinmeix1/feature-store-inference) |
 | RAG Evaluation Pipeline | Versioned ingestion, hybrid retrieval, citations, evaluation reports, runnable API | Replace the three-document fixture with a meaningful corpus and golden set | [GitHub](https://github.com/kevinmeix1/rag-evaluation-pipeline) |
 
 Use the remaining projects as targeted evidence rather than presenting them as
@@ -129,6 +132,12 @@ make compose-smoke # health and behavior checks against running services
 make clean         # remove generated local state
 ```
 
+This is the target contract, not a current compliance claim. Today, all seven
+projects have `make test`, five have `make demo`, none has a verified
+service-backed Compose smoke path, and the only child CI labels compilation as
+linting and type checking. The [mentor review](docs/portfolio-mentor-review.md)
+tracks the gap explicitly.
+
 Each README must include an implementation matrix with three columns:
 
 - **Local:** code exercised by `make demo` and tests
@@ -143,6 +152,7 @@ See the full [Shared Engineering Standard](docs/shared-engineering-standard.md).
 ## Portfolio Guides
 
 - [Senior Mentor Review](docs/portfolio-mentor-review.md)
+- [Recruiter Guide](docs/recruiter-guide.md)
 - [Shared Engineering Standard](docs/shared-engineering-standard.md)
 - [Interview Guide](docs/interview-guide.md)
 - [Evidence-Safe CV Bullets](docs/cv-bullets.md)

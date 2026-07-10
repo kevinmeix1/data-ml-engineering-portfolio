@@ -1,4 +1,4 @@
-.PHONY: bootstrap test verify-submodules tree
+.PHONY: bootstrap test docs-check verify-submodules tree
 
 PROJECTS := \
 	01-lakehouse-data-platform \
@@ -12,8 +12,11 @@ PROJECTS := \
 bootstrap:
 	git submodule update --init --recursive
 
-test: verify-submodules
+test: docs-check verify-submodules
 	python3 scripts/run_all_tests.py
+
+docs-check:
+	python3 scripts/check_portfolio_docs.py
 
 verify-submodules:
 	@for project in $(PROJECTS); do \
