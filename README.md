@@ -1,5 +1,7 @@
 # Data and ML Systems Portfolio
 
+[![Portfolio Contract](https://github.com/kevinmeix1/data-ml-engineering-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/kevinmeix1/data-ml-engineering-portfolio/actions/workflows/ci.yml)
+
 Seven local-first engineering projects covering analytics data platforms, ML
 systems, model operations, data reliability, RAG evaluation, streaming risk,
 and ELT connectors.
