@@ -3,6 +3,11 @@
 Use two or three projects per application. Do not list all seven at equal
 weight, and do not present local benchmark numbers as production results.
 
+Use a bullet only after you can explain the implementation, reproduce its
+evidence, and modify the relevant code without relying on a prepared script.
+AI-assisted scaffolding is compatible with honest ownership; claiming behavior
+you have not personally verified is not.
+
 ## Portfolio Summary
 
 - Built and tested seven local-first data and ML engineering projects covering

@@ -18,6 +18,9 @@ Complete before pinning repositories on GitHub.
 5. Stop using local latency, throughput, drift, or three-question retrieval
    metrics as performance evidence.
 6. Pin only the projects that have cleared the flagship gate.
+7. Complete an ownership walkthrough for every CV-listed project: trace the
+   core path, reproduce a failure, make a small contract change, and explain one
+   rejected alternative.
 
 **Exit criterion:** a reviewer cannot find a material mismatch between a README
 claim and the command it references.
@@ -28,7 +31,9 @@ Apply to all seven repositories:
 
 - add the standard Make targets
 - add Ruff and a real type checker
+- choose and add an explicit license, then declare it in package metadata
 - add exact dependency locks and separate integration extras
+- rename `docker-compose.yml` to `compose.yaml` consistently
 - add GitHub Actions with read-only permissions, concurrency, tests, demo smoke,
   package build, and Docker validation
 - pin container image versions and remove `latest`
